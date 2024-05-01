@@ -1,13 +1,13 @@
 #!/bin/bash
-
 echo "pulling Code Challenge $1"
-
-if [ $1 == '10'  ] || [ $1 == '15'  ] || [ $1 == '19'  ]
+# Create directories if they do not exist
+mkdir -p ./code-challenges
+mkdir -p ./test
+if [ "$1" == "10" ] || [ "$1" == "15" ] || [ "$1" == "19" ]
 then
-    mkdir code-challenges/challenges-$1
-    `which curl` -s https://ltuc.github.io/prep-challenges-content/Code-Challenge-$1/Challenge$1.nnb > ./code-challenges/challenges-$1/challenges-$1.nnb
+    mkdir -p code-challenges/challenges-$1
+    `which curl` -s https://ltuc.github.io/prep-challenges-content/Code-Challenge-$1/Challenge$1.nnb > ./code-challenges/challenges-$1/challenge$1.nnb
     `which curl` -s https://ltuc.github.io/prep-challenges-content/Code-Challenge-$1/README.md > ./code-challenges/challenges-$1/README.md
-
 else
     `which curl` -s https://ltuc.github.io/prep-challenges-content/Code-Challenge-$1/Challenge$1.js > ./code-challenges/challenges-$1.js
     `which curl` -s https://ltuc.github.io/prep-challenges-content/Code-Challenge-$1/Challenge$1.test.js > ./test/challenges-$1.test.js
