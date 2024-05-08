@@ -63,8 +63,8 @@ const getEntries = (obj) => {
   let arrString = [];
 
   let str = "";
-  for (let i = 0; i < arr.length; i++) {
-    str = `${arr[i][0]}: ${arr[i][1]}`;
+  for (let element of arr) {
+    str = `${element[0]}: ${element[1]}`;
     arrString.push(str);
   }
   return arrString;
